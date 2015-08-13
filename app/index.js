@@ -117,7 +117,7 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
           return answers.bootstrap;
         }
       }], function (answers) {
-        
+
         this.filters.babel = !!answers.babel;
         if(this.filters.babel){ this.filters.js = true; }
         this.filters[answers.script] = true;
@@ -126,6 +126,8 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
         this.filters[answers.router] = true;
         this.filters.bootstrap = !!answers.bootstrap;
         this.filters.uibootstrap =  !!answers.uibootstrap;
+        this.stylesheet = answers.stylesheet;
+
       cb();
       }.bind(this));
   },
@@ -249,6 +251,18 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
       bootstrap: true,
       uibootstrap: true
     });
+
+    this.styleEngine = this.filters.less ? 'less' :
+      this.filters.sass ? 'sass' :
+        this.filters.stylus ? 'stylus' :
+          'css';
+
+    this.scriptExt = this.filters.coffee ? 'coffee' : 'js';
+    this.styleExt = this.filters.less ? 'less' :
+      this.filters.sass ? 'scss' :
+        this.filters.stylus ? 'styl' :
+          'css';
+    this.templateExt = this.filters.jade ? 'jade' : 'html';
 
     var angModules = [
       "'ngCookies'",

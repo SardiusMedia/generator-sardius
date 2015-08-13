@@ -1,5 +1,21 @@
 'use strict';
 
+//HTML
+require('./index.html');
+//Styles
+<% if(filters.css){ %>
+  require('./styles.css');
+<% } %>
+<% if(filters.sass){ %>
+  require('./styles.scss');
+<% } %>
+<% if(filters.less){ %>
+  require('./styles.less');
+<% } %>
+<% if(filters.stylus){ %>
+  require('./styles.styl');
+<% } %>
+
 angular.module('<%= scriptAppName %>', [<%= angularModules %>])
   <% if(filters.ngroute) { %>.config(function ($routeProvider, $locationProvider<% if(filters.auth) { %>, $httpProvider<% } %>) {
     $routeProvider

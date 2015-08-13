@@ -56,7 +56,7 @@ module.exports = function (grunt) {
         curly: false,
         node: true
       },
-      all: ['Gruntfile.js', '*/index.js']
+      all: ['Gulpfile.js', '*/index.js']
     },
     mochaTest: {
       test: {

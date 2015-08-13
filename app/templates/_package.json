@@ -30,49 +30,33 @@
     "socketio-jwt": "^3.0.0"<% } %>
   },
   "devDependencies": {
-    "grunt": "~0.4.4",
-    "grunt-autoprefixer": "~0.7.2",
-    "grunt-wiredep": "~1.8.0",
-    "grunt-concurrent": "~0.5.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-cssmin": "~0.9.0",
-    "grunt-contrib-htmlmin": "~0.2.0",
-    "grunt-contrib-imagemin": "~0.7.1",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-watch": "~0.6.1",<% if(filters.coffee) { %>
-    "grunt-contrib-coffee": "^0.10.1",<% } %><% if(filters.jade) { %>
-    "grunt-contrib-jade": "^0.11.0",<% } %><% if(filters.less) { %>
-    "grunt-contrib-less": "^0.11.0",<% } %><% if(filters.babel) { %>
-    "karma-babel-preprocessor": "^5.2.1",
-    "grunt-babel": "~5.0.0",<% } %>
-    "grunt-google-cdn": "~0.4.0",
-    "grunt-newer": "~0.7.0",
-    "grunt-ng-annotate": "^0.2.3",
-    "grunt-rev": "~0.1.0",
-    "grunt-svgmin": "~0.4.0",
-    "grunt-usemin": "~2.1.1",
-    "grunt-env": "~0.4.1",
-    "grunt-node-inspector": "~0.1.5",
-    "grunt-nodemon": "~0.2.0",
-    "grunt-angular-templates": "^0.5.4",
-    "grunt-dom-munger": "^3.4.0",
-    "grunt-protractor-runner": "^1.1.0",
-    "grunt-injector": "~0.5.4",
-    "grunt-karma": "~0.8.2",
-    "grunt-build-control": "~0.4.0",
-    "grunt-mocha-test": "~0.10.2",<% if(filters.sass) { %>
-    "grunt-contrib-sass": "^0.7.3",<% } %><% if(filters.stylus) { %>
-    "grunt-contrib-stylus": "latest",<% } %>
-    "jit-grunt": "^0.5.0",
-    "time-grunt": "~0.3.1",
-    "grunt-express-server": "~0.4.17",
-    "grunt-open": "~0.2.3",
+    "angular": ">=1.2.*",
+    "angular-sanitize": ">=1.2.*",<% if(filters.ngroute) { %>
+    "angular-route": ">=1.2.*",<% } %><% if(filters.uibootstrap) { %>
+    "angular-bootstrap": "~0.11.0",<% } %><% if(filters.socketio) { %>
+    "angular-socket-io":"~0.7.0",<% } %><% if(filters.uirouter) { %>,
+    "angular-ui-router": "~0.2.15",<% } %>
+    "angular-mocks": ">=1.2.*",
+    "angular-scenario": ">=1.2.*",
+    "gulp": "~3.9.0",
+    "gulp-util": "~3.0.6",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1",
+    "extract-text-webpack-plugin": "~0.8.2",
+    "nodemon": "^1.3.7",<%if(filters.coffee){%>
+    "coffee-loader": "~0.7.2",<% } %>
+    "run-sequence": "^1.1.0", <%if(filters.jade){%>
+    "jade-html-loader":"~0.0.2",<% } %>
+    "html-loader": "~0.3.0",
+    "ngtemplate-loader": "~1.3.0",<%if(filters.sass){%>
+    "node-sass": "~3.2.0",
+    "sass-loader": "~2.0.0",<%} if(filters.stylus){%>
+    "stylus-loader": "~1.2.0",<%} if(filters.less){%>
+    "less-loader": "~2.2.0",<%}%>
+    "css-loader": "~0.15.6",
+    "style-loader": "^0.12.3",
     "open": "~0.0.4",
     "jshint-stylish": "~0.1.5",
-    "connect-livereload": "~0.4.0",
     "karma-ng-scenario": "~0.1.0",
     "karma-firefox-launcher": "~0.1.3",
     "karma-script-launcher": "~0.1.0",
@@ -95,7 +79,7 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "test": "grunt test",
+    "test": "",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
   "private": true

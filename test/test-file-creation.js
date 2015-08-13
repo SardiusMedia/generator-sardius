@@ -340,7 +340,7 @@ describe('angular-fullstack generator', function () {
             '.bowerrc',
             '.editorconfig',
             '.gitignore',
-            'Gruntfile.js',
+            'Gulpfile.js',
             'package.json',
             'bower.json',
             'server/app.js',
