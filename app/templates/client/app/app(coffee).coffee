@@ -1,22 +1,29 @@
 'use strict'
 
 //HTML
-require './index.html'
+require 'index.html'
 //Styles
 <% if(filters.css){ %>
-require './styles.css'
+require './app.css'
 <% } %>
 <% if(filters.sass){ %>
-require './styles.scss'
+require './app.scss'
 <% } %>
 <% if(filters.less){ %>
-require './styles.less'
+require './app.less'
 <% } %>
 <% if(filters.stylus){ %>
-    require './styles.styl'
+    require './app.styl'
 <% } %>
-
-
+//Js Deps
+require 'angular'
+require 'angular-sanitize'
+require 'angular-resource'
+require 'angular-cookies'<% if(filters.ngroute) { %>
+require 'angular-route'<% } %><% if(filters.uibootstrap) { %>
+require 'angular-bootstrap'<% } %><% if(filters.socketio) { %>
+require 'angular-socket-io'<% } %><% if(filters.uirouter) { %>
+require 'angular-ui-router'<% } %>
 
 angular.module '<%= scriptAppName %>', [<%= angularModules %>]
 <% if(filters.ngroute) { %>.config ($routeProvider, $locationProvider<% if(filters.auth) { %>, $httpProvider<% } %>) ->
@@ -55,3 +62,8 @@ angular.module '<%= scriptAppName %>', [<%= angularModules %>]
     Auth.isLoggedInAsync (loggedIn) ->
       $location.path "/login" if next.authenticate and not loggedIn
 <% } %>
+% if(filters.socketio) { %>
+require './components/socketio/socket.service'
+<% } %>
+
+require './main/main'

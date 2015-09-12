@@ -53,7 +53,7 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
         }
 
         cb();
-      }.bind(this));
+      }.  bind(this));
     } else {
       cb();
     }

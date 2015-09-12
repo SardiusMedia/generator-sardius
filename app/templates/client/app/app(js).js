@@ -1,20 +1,29 @@
 'use strict';
 
 //HTML
-require('./index.html');
+require('index.html');
 //Styles
 <% if(filters.css){ %>
-  require('./styles.css');
+  require('./app.css');
 <% } %>
 <% if(filters.sass){ %>
-  require('./styles.scss');
+  require('./app.scss');
 <% } %>
 <% if(filters.less){ %>
-  require('./styles.less');
+  require('./app.less');
 <% } %>
 <% if(filters.stylus){ %>
-  require('./styles.styl');
+  require('./app.styl');
 <% } %>
+//Js Deps
+require('angular');
+require('angular-sanitize');
+require('angular-resource');
+require('angular-cookies');<% if(filters.ngroute) { %>
+require('angular-route');<% } %><% if(filters.uibootstrap) { %>
+require('angular-bootstrap');<% } %><% if(filters.socketio) { %>
+require('angular-socket-io');<% } %><% if(filters.uirouter) { %>
+require('angular-ui-router');<% } %>
 
 angular.module('<%= scriptAppName %>', [<%= angularModules %>])
   <% if(filters.ngroute) { %>.config(function ($routeProvider, $locationProvider<% if(filters.auth) { %>, $httpProvider<% } %>) {
@@ -32,7 +41,6 @@ angular.module('<%= scriptAppName %>', [<%= angularModules %>])
     $locationProvider.html5Mode(true);<% if(filters.auth) { %>
     $httpProvider.interceptors.push('authInterceptor');<% } %>
   })<% } %><% if(filters.auth) { %>
-
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers
@@ -70,3 +78,5 @@ angular.module('<%= scriptAppName %>', [<%= angularModules %>])
       });
     });
   })<% } %>;
+<% if(filters.socketio) { %>require('./components/socketio/socket.service');<% } %>
+require('./main/main');

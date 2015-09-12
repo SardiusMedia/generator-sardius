@@ -31,10 +31,12 @@
   },
   "devDependencies": {
     "angular": ">=1.2.*",
+    "angular-resource": ">=1.2.*",
+    "angular-cookies": ">=1.2.*",
     "angular-sanitize": ">=1.2.*",<% if(filters.ngroute) { %>
     "angular-route": ">=1.2.*",<% } %><% if(filters.uibootstrap) { %>
     "angular-bootstrap": "~0.11.0",<% } %><% if(filters.socketio) { %>
-    "angular-socket-io":"~0.7.0",<% } %><% if(filters.uirouter) { %>,
+    "angular-socket-io":"~0.7.0",<% } %><% if(filters.uirouter) { %>
     "angular-ui-router": "~0.2.15",<% } %>
     "angular-mocks": ">=1.2.*",
     "angular-scenario": ">=1.2.*",
@@ -55,6 +57,9 @@
     "less-loader": "~2.2.0",<%}%>
     "css-loader": "~0.15.6",
     "style-loader": "^0.12.3",
+    "raw-loader": "^0.5.1",
+    "url-loader": "^0.5.6",
+    "file-loader": "^0.8.4",
     "open": "~0.0.4",
     "jshint-stylish": "~0.1.5",
     "karma-ng-scenario": "~0.1.0",
@@ -72,7 +77,8 @@
     "karma": "~0.12.9",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "supertest": "~0.11.0",
-    "should": "~3.3.1"
+    "should": "~3.3.1",
+    "gulp-copy": ""
   },
   "engines": {
     "node": ">=0.10.0"
