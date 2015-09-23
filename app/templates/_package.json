@@ -35,7 +35,7 @@
     "angular-cookies": ">=1.2.*",
     "angular-sanitize": ">=1.2.*",<% if(filters.ngroute) { %>
     "angular-route": ">=1.2.*",<% } %><% if(filters.uibootstrap) { %>
-    "angular-bootstrap": "~0.11.0",<% } %><% if(filters.socketio) { %>
+    "angular-ui-bootstrap": "~0.13.0",<% } %><% if(filters.socketio) { %>
     "angular-socket-io":"~0.7.0",<% } %><% if(filters.uirouter) { %>
     "angular-ui-router": "~0.2.15",<% } %>
     "angular-mocks": ">=1.2.*",

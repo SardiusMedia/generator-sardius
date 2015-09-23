@@ -34,10 +34,9 @@ module.exports =
     app: ['../node_modules/webpack/hot/dev-server', <% if(filters.coffee){ %>'./app/app.coffee'<% } %><% if(filters.js){ %>'./app/app.js'<% } %>]
   },
   output: {
-    output: {
-      path: __dirname+"/dist",
-        publicPath: __dirname+"/dist",
-        filename: 'bundle.js'
-    },
-  }
+    path: __dirname+"/dist",
+    publicPath: __dirname+"/dist",
+    filename: 'bundle.js'
+   },
+   plugins: []
 };

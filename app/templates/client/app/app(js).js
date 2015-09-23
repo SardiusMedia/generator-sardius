@@ -21,7 +21,7 @@ require('angular-sanitize');
 require('angular-resource');
 require('angular-cookies');<% if(filters.ngroute) { %>
 require('angular-route');<% } %><% if(filters.uibootstrap) { %>
-require('angular-bootstrap');<% } %><% if(filters.socketio) { %>
+require('angular-ui-bootstrap');<% } %><% if(filters.socketio) { %>
 require('angular-socket-io');<% } %><% if(filters.uirouter) { %>
 require('angular-ui-router');<% } %>
 
@@ -78,5 +78,5 @@ angular.module('<%= scriptAppName %>', [<%= angularModules %>])
       });
     });
   })<% } %>;
-<% if(filters.socketio) { %>require('./components/socketio/socket.service');<% } %>
+<% if(filters.socketio) { %>require('../components/socket/socket.service');<% } %>
 require('./main/main');
