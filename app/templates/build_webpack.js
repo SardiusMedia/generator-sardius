@@ -1,13 +1,18 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var html = new ExtractTextPlugin("index.html")
 var baseDir = __dirname + "/client/";
+var index = baseDir + "/index.html";
 module.exports =
 {
   assets: baseDir +'/assets/**/*',
   context: baseDir,
   resolve: {
+    modulesDirectories: [
+      'node_modules',
+      baseDir + '/bower_components'
+    ],
     alias: {
-      'index.html': baseDir + "/index.html"
+      'index.html': index
     }
   },
   module: {

@@ -1,4 +1,7 @@
 'use strict'
+<% if(filters.jade){ %>
+require('./navbar.jade')<% } %><% if(filters.html) { %>
+require('./navbar.html')<% } %>
 
 angular.module '<%= scriptAppName %>'
 .controller 'NavbarCtrl', ($scope, $location<% if(filters.auth) {%>, Auth<% } %>) ->

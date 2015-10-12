@@ -1,5 +1,12 @@
 'use strict';
-
+<% if(filters.jade){ %>
+var template = require('./modal.jade');<% } %><% if(filters.html) { %>
+var template = require('./modal.html');<% } %>
+<% if(filters.css){ %>
+require('./modal.css');<% } %><% if(filters.sass) { %>
+require('./modal.scss');<% } %><% if(filters.stylus) { %>
+require('./modal.styl');
+<% } %>
 angular.module('<%= scriptAppName %>')
   .factory('Modal', function ($rootScope, $modal) {
     /**

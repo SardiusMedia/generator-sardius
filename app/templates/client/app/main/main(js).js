@@ -1,9 +1,7 @@
 'use strict';
 <% if(filters.jade){ %>
-  var template = require('./main.jade');
-<% } %><% if(filters.html) { %>
-  var template = require('./main.html');
-<% } %>
+var template = require('./main.jade');<% } %><% if(filters.html) { %>
+var template = require('./main.html');<% } %>
 
 angular.module('<%= scriptAppName %>')
   <% if(filters.ngroute) { %>.config(function ($routeProvider) {

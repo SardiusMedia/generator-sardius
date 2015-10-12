@@ -4,17 +4,10 @@
 require('index.html');
 //Styles
 <% if(filters.css){ %>
-  require('./app.css');
-<% } %>
-<% if(filters.sass){ %>
-  require('./app.scss');
-<% } %>
-<% if(filters.less){ %>
-  require('./app.less');
-<% } %>
-<% if(filters.stylus){ %>
-  require('./app.styl');
-<% } %>
+require('./app.css');<% } %><% if(filters.sass){ %>
+require('./app.scss');<% } %><% if(filters.less){ %>
+require('./app.less');<% } %><% if(filters.stylus){ %>
+require('./app.styl');<% } %>
 //Js Deps
 require('angular');
 require('angular-sanitize');

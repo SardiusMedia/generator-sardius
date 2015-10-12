@@ -1,11 +1,16 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var baseDir ="./client";
+var baseDir = __dirname + "/client";
+var index = baseDir + "/index.html";
 module.exports =
 {
   context: baseDir,
   resolve: {
+    modulesDirectories: [
+      'node_modules',
+      baseDir + '/bower_components'
+    ],
     alias: {
-      'index.html': baseDir + "/index.html"
+      'index.html': index
     }
   },
   module: {
@@ -31,7 +36,7 @@ module.exports =
     ],
   },
   entry: {
-    app: ['../node_modules/webpack/hot/dev-server', <% if(filters.coffee){ %>'./app/app.coffee'<% } %><% if(filters.js){ %>'./app/app.js'<% } %>]
+    app: ['../node_modules/webpack/hot/dev-server', <% if(filters.coffee){ %>baseDir + '/app/app.coffee'<% } %><% if(filters.js){ %>baseDir + '/app/app.js'<% } %>]
   },
   output: {
     path: __dirname+"/dist",

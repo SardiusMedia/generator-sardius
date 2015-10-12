@@ -1,4 +1,8 @@
 'use strict';
+<% if(filters.jade){ %>
+var template = require('./navbar.jade');<% } %><% if(filters.html) { %>
+var template = require('./navbar.html');<% } %>
+
 angular.module('<%= scriptAppName %>')
   .controller('NavbarCtrl', function ($scope, $location<% if(filters.auth) {%>, Auth<% } %>) {
     $scope.menu = [{
