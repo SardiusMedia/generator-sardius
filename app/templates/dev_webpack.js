@@ -33,6 +33,10 @@ module.exports =
         loader: 'ngtemplate?relativeTo=' + baseDir + '!html',
         exclude: /index\.html/
       },<% } %>
+      {
+        test: /index\.html$/,
+        loader: 'html',
+      }
     ],
   },
   entry: {
